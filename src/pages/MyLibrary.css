@@ -1,0 +1,62 @@
+.mylibrary-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mylibrary-title {
+    font-family: 'Merriweather', serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #ff6a00, #ee0979, #ff6a00);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: colorShift 5s ease-in-out infinite;
+}
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+@media (min-width: 768px) {
+    .book-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .book-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .mylibrary-container{
+        width: 100%;
+    }
+    
+}
+
+.empty-message {
+    font-size: 1.5rem;
+    color: #555;
+    text-align: center;
+    margin-top: 20px;
+}
+
+@keyframes colorShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
